@@ -53,7 +53,7 @@ NagaBantay is a mobile and web platform for environmental and disaster reporting
 
 ## My Role
 
-**Mobile Application Developer.** I designed and developed the resident-facing mobile application in Flutter, including all features listed below, from the report submission flow to the hazard maps and alert system. The barangay-facing web platform was developed by my teammates.
+**Mobile Application Developer.** I designed and developed the resident-facing mobile application in Flutter, including all features listed below, from the report submission flow to the hazard maps and alert system. I also integrated the report classification model into the app, connecting the mobile client to the model's predictions. The model itself was developed by my teammates, and the barangay-facing web platform was likewise developed by them.
 
 ---
 
@@ -83,6 +83,13 @@ Alerts issued by barangay officials through the web platform are delivered to th
 ### Personalized Safety Guides
 Safety guidance is generated from the alerts affecting the resident's barangay. Each guide includes a stated goal and a step-by-step checklist, and covers floods, typhoons, extreme heat, fire incidents, waste collection, drainage clearing, and tree pruning. Guides are also shown directly within each alert's detail view. When no relevant alerts are active, general guides for typhoons, fires, and floods are displayed.
 
+### Automated Report Classification
+Each submitted report is processed by a classification model that determines two things:
+- **Responsible office:** the report is automatically routed to the appropriate office, removing the need for residents to know which department handles which issue.
+- **Severity level:** each report is assigned a severity rating, which is displayed to the resident in the report tracking screen and helps offices prioritize their response.
+
+My contribution was integrating the model into the mobile application, covering the submission flow and the display of the predicted severity to the resident. The model was developed by other members of the team.
+
 ---
 
 ## System Overview
@@ -103,6 +110,7 @@ Safety guidance is generated from the alerts affecting the resident's barangay. 
 | Database and real-time sync | Cloud Firestore |
 | Maps | Mapbox Maps SDK for Flutter, GeoJSON hazard and evacuation datasets |
 | Other libraries | audioplayers, dropdown_search, phosphor_flutter, flutter_dotenv |
+| Report classification | Integration of a team-developed classification model for office routing and severity prediction |
 
 ---
 
